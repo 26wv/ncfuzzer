@@ -1,0 +1,40 @@
+[package]
+name = "ncfuzzer"
+version = "0.1.0"
+edition = "2021"
+authors = ["26wv <26wv@users.noreply.github.com>"]
+description = "High-throughput configurable TCP line-oracle fuzzer with persistent connections and auto-calibration."
+keywords = ["fuzzer", "ctf", "tcp", "security", "line-oracle"]
+categories = ["command-line-utilities", "network-programming"]
+repository = "https://github.com/26wv/ncfuzzer"
+readme = "README.md"
+license = "MIT"
+
+[dependencies]
+anyhow = "1"
+clap = { version = "4", features = ["derive"] }
+governor = "0.6"
+indicatif = "0.18"
+memmap2 = "0.9"
+regex = "1"
+serde_json = "1"
+tokio = { version = "1", features = [
+    "rt-multi-thread",
+    "net",
+    "io-util",
+    "io-std",
+    "time",
+    "sync",
+    "macros",
+    "fs",
+    "signal",
+    "process",
+] }
+
+[dev-dependencies]
+assert_cmd = "2"
+predicates = "3"
+tempfile = "3"
+
+[profile.release]
+lto = "thin"

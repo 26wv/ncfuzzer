@@ -1,0 +1,15 @@
+/target
+# Local test fixtures (not shipped)
+/xato-net-10-million-usernames.txt
+# local tests not shipped
+/tests
+
+# editor junk
+.vscode/
+.idea/
+*.swp
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
